@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+- { box-sizing: border-box; margin: 0; padding: 0; }
+
+@font-face {
+font-family: “TT Trailers”;
+src: url(’./TT Trailers Trial Variable.ttf’);
+}
+
+:root {
+–holy-yellow: #FBDB3F;
+–holy-brown: #4D2F25;
+–holy-pink: #FFACDD;
+–holy-blue: #89A5E9;
+–holy-cream: #FFF8E7;
+–holy-yellow-dark: #E8C820;
+–font-display: “TT Trailers”, sans-serif;
+–font-body: ‘Inter’, sans-serif;
+}
+
+body {
+background: #f5f5f0;
+font-family: var(–font-body);
+padding: 0;
+}
+
+.section { margin-bottom: 2px; }
+
+.section-label {
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: #888;
+padding: 18px 24px 8px;
+font-weight: 500;
+font-family: var(–font-body);
+}
+
+/* ─── HERO ─── */
+.hero {
+background: var(–holy-yellow);
+padding: 48px 40px 40px;
+position: relative;
+overflow: hidden;
+}
+
+/* Logo HOLY — TT Trailers, taille raisonnable */
+.hero-logo {
+font-family: var(–font-display);
+font-size: 96px;
+color: var(–holy-brown);
+line-height: 0.85;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+
+.hero-tagline {
+margin-top: 20px;
+font-size: 18px;
+font-weight: 700;
+color: var(–holy-brown);
+max-width: 280px;
+line-height: 1.3;
+font-family: var(–font-body);
+}
+
+.hero-dot {
+width: 180px; height: 180px; border-radius: 50%;
+background: var(–holy-brown); opacity: 0.07;
+position: absolute; right: -40px; top: -40px;
+}
+.hero-dot2 {
+width: 80px; height: 80px; border-radius: 50%;
+background: var(–holy-brown); opacity: 0.1;
+position: absolute; right: 80px; bottom: 20px;
+}
+
+/* ─── PALETTE ─── */
+.colors-row { display: flex; gap: 0; }
+.color-chip {
+flex: 1; height: 80px;
+display: flex; flex-direction: column;
+justify-content: flex-end; padding: 10px 12px;
+}
+.color-name { font-size: 11px; font-weight: 600; margin-bottom: 2px; }
+.color-hex { font-size: 10px; opacity: 0.7; font-family: monospace; }
+
+/* ─── TYPO ─── */
+.typo-section {
+background: white;
+padding: 28px 32px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 28px;
+}
+.font-role {
+font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+color: #aaa; margin-bottom: 6px; font-weight: 500;
+}
+.font-name { font-size: 13px; font-weight: 600; color: #333; margin-bottom: 10px; }
+
+/* TT Trailers pour la démo display */
+.font-sample-primary {
+font-family: var(–font-display);
+font-size: 48px;
+color: var(–holy-brown);
+line-height: 1;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+
+.font-sample-secondary {
+font-size: 22px; font-weight: 400;
+color: var(–holy-brown); line-height: 1.3; font-style: italic;
+}
+.font-sample-body {
+font-size: 14px; color: #555; line-height: 1.6; margin-top: 6px;
+}
+
+/* ─── LOGO VARIANTS ─── */
+.logo-variants { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
+.logo-card {
+padding: 28px 20px;
+display: flex; flex-direction: column;
+align-items: center; justify-content: center;
+gap: 8px; min-height: 120px;
+}
+
+/* TT Trailers sur les logos */
+.logo-text {
+font-family: var(–font-display);
+font-size: 38px;
+letter-spacing: 1px;
+text-transform: uppercase;
+line-height: 1;
+}
+
+.logo-sub {
+font-size: 9px; letter-spacing: 0.18em;
+text-transform: uppercase; font-weight: 500;
+opacity: 0.6; font-family: var(–font-body);
+}
+
+.lc-yellow { background: var(–holy-yellow); }
+.lc-brown  { background: var(–holy-brown); }
+.lc-white  { background: white; border: 1px solid #eee; }
+
+/* ─── BOUTONS & BADGES ─── */
+.ui-section {
+background: white; padding: 28px 32px;
+display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.ui-col-label {
+font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+color: #aaa; margin-bottom: 14px; font-weight: 500;
+}
+
+.btn-primary {
+display: inline-block; background: var(–holy-brown); color: var(–holy-yellow);
+font-weight: 800; font-size: 13px; padding: 12px 24px; border-radius: 100px;
+letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer; border: none;
+font-family: var(–font-body);
+}
+.btn-secondary {
+display: inline-block; background: transparent; color: var(–holy-brown);
+font-weight: 700; font-size: 13px; padding: 11px 24px; border-radius: 100px;
+letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer;
+border: 2px solid var(–holy-brown); margin-top: 8px; font-family: var(–font-body);
+}
+.btn-yellow {
+display: inline-block; background: var(–holy-yellow); color: var(–holy-brown);
+font-weight: 800; font-size: 13px; padding: 12px 24px; border-radius: 100px;
+letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer;
+border: none; margin-top: 8px; font-family: var(–font-body);
+}
+
+.badge {
+display: inline-block; font-size: 10px; font-weight: 700;
+letter-spacing: 0.1em; text-transform: uppercase;
+padding: 4px 12px; border-radius: 100px;
+font-family: var(–font-body);
+}
+.badge-yellow { background: var(–holy-yellow); color: var(–holy-brown); }
+.badge-pink   { background: var(–holy-pink);   color: #7a2950; }
+.badge-blue   { background: var(–holy-blue);   color: #1a2f6b; }
+.badge-brown  { background: var(–holy-brown);  color: var(–holy-yellow); }
+.badges-row   { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+
+/* Headline exemple — TT Trailers */
+.headline-example {
+font-family: var(–font-display);
+font-size: 26px;
+color: var(–holy-brown);
+text-transform: uppercase;
+letter-spacing: 0.5px;
+line-height: 1.05;
+margin-top: 4px;
+}
+
+/* ─── CARDS ─── */
+.cards-grid {
+padding: 20px 24px; background: #f5f5f0;
+display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+
+.product-card {
+background: var(–holy-yellow); border-radius: 20px;
+padding: 24px; position: relative; overflow: hidden;
+}
+.product-card-label {
+font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+text-transform: uppercase; color: var(–holy-brown);
+opacity: 0.6; margin-bottom: 8px; font-family: var(–font-body);
+}
+/* TT Trailers sur le nom produit */
+.product-card-name {
+font-family: var(–font-display);
+font-size: 38px;
+color: var(–holy-brown);
+text-transform: uppercase;
+letter-spacing: 0.5px;
+line-height: 0.95;
+margin-bottom: 8px;
+}
+.product-card-desc {
+font-size: 12px; color: var(–holy-brown); opacity: 0.7;
+line-height: 1.5; max-width: 140px; font-family: var(–font-body);
+}
+.product-circle {
+position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+width: 72px; height: 72px; border-radius: 50%;
+background: var(–holy-brown);
+display: flex; align-items: center; justify-content: center;
+}
+.product-circle-text {
+font-size: 11px; font-weight: 800; color: var(–holy-yellow);
+text-transform: uppercase; text-align: center;
+letter-spacing: 0.04em; line-height: 1.2;
+font-family: var(–font-body);
+}
+
+.dark-card { background: var(–holy-brown); border-radius: 20px; padding: 24px; }
+
+/* TT Trailers sur dark card title */
+.dark-card-title {
+font-family: var(–font-display);
+font-size: 28px;
+color: var(–holy-yellow);
+text-transform: uppercase;
+letter-spacing: 0.5px;
+line-height: 1;
+margin-bottom: 4px;
+}
+
+.dark-card-sub {
+font-size: 12px; color: var(–holy-yellow); opacity: 0.6;
+margin-bottom: 16px; line-height: 1.4; font-family: var(–font-body);
+}
+.feature-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.feature-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.feature-text { font-size: 12px; color: white; opacity: 0.85; font-weight: 500; font-family: var(–font-body); }
+
+/* ─── PATTERN STRIP ─── */
+.pattern-strip {
+height: 56px; background: var(–holy-pink);
+display: flex; align-items: center;
+overflow: hidden; position: relative;
+}
+.pattern-text {
+font-size: 15px; font-weight: 900; color: #7a2950;
+text-transform: uppercase; letter-spacing: 0.05em;
+white-space: nowrap; padding-right: 40px;
+font-family: var(–font-body);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─── -->
+
+<div class="hero">
+  <div class="hero-dot"></div>
+  <div class="hero-dot2"></div>
+  <!-- TT Trailers -->
+  <div class="hero-logo">HOLY</div>
+  <div class="hero-tagline">The easiest way<br>to peaceful browsing</div>
+</div>
+
+<!-- ─── PALETTE ─── -->
+
+<div class="section-label">Palette</div>
+<div class="colors-row">
+  <div class="color-chip" style="background: #FBDB3F;">
+    <span class="color-name" style="color: #4D2F25;">Sunny</span>
+    <span class="color-hex" style="color: #4D2F25;">#FBDB3F</span>
+  </div>
+  <div class="color-chip" style="background: #4D2F25;">
+    <span class="color-name" style="color: #FBDB3F;">Earth</span>
+    <span class="color-hex" style="color: #FBDB3F;">#4D2F25</span>
+  </div>
+  <div class="color-chip" style="background: #FFACDD;">
+    <span class="color-name" style="color: #7a2950;">Bloom</span>
+    <span class="color-hex" style="color: #7a2950;">#FFACDD</span>
+  </div>
+  <div class="color-chip" style="background: #89A5E9;">
+    <span class="color-name" style="color: #1a2f6b;">Sky</span>
+    <span class="color-hex" style="color: #1a2f6b;">#89A5E9</span>
+  </div>
+  <div class="color-chip" style="background: white; border-top: 1px solid #eee;">
+    <span class="color-name" style="color: #4D2F25;">White</span>
+    <span class="color-hex" style="color: #999;">#FFFFFF</span>
+  </div>
+</div>
+
+<!-- ─── TYPOGRAPHIE ─── -->
+
+<div class="section-label">Typographie</div>
+<div class="typo-section">
+  <div>
+    <div class="font-role">Primaire — Display</div>
+    <div class="font-name">TT Trailers Black</div>
+    <!-- TT Trailers -->
+    <div class="font-sample-primary">Holy One</div>
+    <div class="font-sample-body" style="font-weight: 700; font-size: 13px; color: var(--holy-brown); margin-top: 8px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>0123456789</div>
+  </div>
+  <div>
+    <div class="font-role">Secondaire — Corps</div>
+    <div class="font-name">Inter</div>
+    <div class="font-sample-secondary">Simple. Sûr.<br>Pour tout le monde.</div>
+    <div class="font-sample-body">Corps de texte, interfaces, descriptions. Lisible, humain, universel.</div>
+  </div>
+</div>
+
+<!-- ─── LOGO VARIANTS ─── -->
+
+<div class="section-label">Logo — Variantes</div>
+<div class="logo-variants">
+  <div class="logo-card lc-yellow">
+    <!-- TT Trailers -->
+    <div class="logo-text" style="color: var(--holy-brown);">HOLY</div>
+    <div class="logo-sub" style="color: var(--holy-brown);">Security for everyone</div>
+  </div>
+  <div class="logo-card lc-brown">
+    <div class="logo-text" style="color: var(--holy-yellow);">HOLY</div>
+    <div class="logo-sub" style="color: var(--holy-yellow);">Security for everyone</div>
+  </div>
+  <div class="logo-card lc-white">
+    <div class="logo-text" style="color: var(--holy-brown);">HOLY</div>
+    <div class="logo-sub" style="color: #999;">Security for everyone</div>
+  </div>
+</div>
+
+<!-- ─── PATTERN STRIP ─── -->
+
+<div class="pattern-strip">
+  <span class="pattern-text">Plug & Play &nbsp;·&nbsp; No config &nbsp;·&nbsp; 100% local &nbsp;·&nbsp; Your data stays yours &nbsp;·&nbsp; Plug & Play &nbsp;·&nbsp; No config &nbsp;·&nbsp; 100% local &nbsp;·&nbsp; Your data stays yours &nbsp;·&nbsp;</span>
+</div>
+
+<!-- ─── CARDS ─── -->
+
+<div class="section-label">Composants — Cards</div>
+<div class="cards-grid">
+
+  <div class="product-card">
+    <div class="product-card-label">Produit</div>
+    <!-- TT Trailers -->
+    <div class="product-card-name">Holy<br>One</div>
+    <div class="product-card-desc">Branchez. C'est tout.</div>
+    <div class="product-circle">
+      <div class="product-circle-text">Plug<br>&<br>Play</div>
+    </div>
+  </div>
+
+  <div class="dark-card">
+    <!-- TT Trailers -->
+    <div class="dark-card-title">Pourquoi<br>Holy ?</div>
+    <div class="dark-card-sub">Pas besoin d'être expert.</div>
+    <div class="feature-row">
+      <div class="feature-dot" style="background: var(--holy-yellow);"></div>
+      <div class="feature-text">Zéro configuration</div>
+    </div>
+    <div class="feature-row">
+      <div class="feature-dot" style="background: var(--holy-pink);"></div>
+      <div class="feature-text">Traitement 100% local</div>
+    </div>
+    <div class="feature-row">
+      <div class="feature-dot" style="background: var(--holy-blue);"></div>
+      <div class="feature-text">Vos données restent vôtres</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─── BOUTONS & BADGES ─── -->
+
+<div class="section-label">Composants — Boutons & Badges</div>
+<div class="ui-section">
+  <div>
+    <div class="ui-col-label">Boutons</div>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+      <button class="btn-primary">Commencer →</button>
+      <button class="btn-secondary">En savoir plus</button>
+      <button class="btn-yellow">Holy One — Découvrir</button>
+    </div>
+  </div>
+  <div>
+    <div class="ui-col-label">Badges & étiquettes</div>
+    <div class="badges-row">
+      <span class="badge badge-yellow">Nouveau</span>
+      <span class="badge badge-pink">IA</span>
+      <span class="badge badge-blue">Beta</span>
+      <span class="badge badge-brown">Holy One</span>
+    </div>
+    <div style="margin-top: 18px;">
+      <div class="ui-col-label">Headline exemple</div>
+      <!-- TT Trailers -->
+      <div class="headline-example">La sécurité,<br>enfin pour tous.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+
+<div style="background: var(--holy-brown); padding: 20px 32px; display: flex; justify-content: space-between; align-items: center;">
+  <!-- TT Trailers -->
+  <div style="font-family: var(--font-display); font-size: 26px; color: var(--holy-yellow); text-transform: uppercase; letter-spacing: 1px;">HOLY</div>
+  <div style="font-size: 11px; color: var(--holy-yellow); opacity: 0.5; letter-spacing: 0.06em; text-transform: uppercase; font-family: 'Inter', sans-serif;">Security for everyone</div>
+</div>
+
+</body>
+</html>
